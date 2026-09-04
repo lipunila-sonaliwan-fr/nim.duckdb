@@ -42,7 +42,7 @@ The default settings (used when the `duquack.txt` file is unmodified or missing)
 
 The builds include the dynamic libraries and the DuckDB console interface (version 1.5.5) for Linux, macOS, and Windows. The server and any developed Nim applications can be deployed across all these operating systems and are interoperable.
 
-Once the server is running, you can use the DuckDB console—either one you have installed yourself or one of the provided options—to access the duquack server.
+Once the server is running, you can use the DuckDB console - either one you have installed yourself or one of the provided options - to access the duquack server.
 
 ```
 jihem@sonaliwan-lin01 nim.duckdb % **duckdb**
@@ -112,7 +112,7 @@ DuckDB's capabilities are virtually limitless, and we have only scratched the su
 
 IMPORTANT: If, for any reason, you encounter difficulties loading DuckDB extensions (such as Quack), you can trigger their installation (once and for all) for the current session using the DuckDB console command: **INSTALL '<plugin_name>'**. These are stored in the **.duckdb** folder at the root of the user account (e.g., `/home/<name>` on Linux, `/Users/<name>` on macOS, and `/Users/<name>` on Windows). Specifically, they are located in the **.duckdb/extensions/<DuckDB_version>/<OS_version>** directory. You can then copy the contents of this directory to another system for installation (provided it runs the same versions of DuckDB and the operating system).
 
-As a special measure, this repository includes the required binaries—DuckDB console executables and necessary Nim libraries—for Linux, macOS, and Windows (version 1.5.5); the provided library automatically detects and utilizes them.
+As a special measure, this repository includes the required binaries - DuckDB console executables and necessary Nim libraries - for Linux, macOS, and Windows (version 1.5.5); the provided library automatically detects and utilizes them.
 
 Please find below a reminder of the associated license:
 
