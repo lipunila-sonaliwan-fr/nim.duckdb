@@ -21,6 +21,7 @@ After loading the package (via `nimble install duquack`), you can...
 
 The output displayed on the screen looks like this:
 
+```
 jihem@sonaliwan-mac01 nim.duckdb % nimble run
       Info: using /opt/homebrew/Cellar/nim/2.2.10/nim/bin/nim for compilation
    Building duquack/duquack using c backend
@@ -33,7 +34,7 @@ jihem@sonaliwan-mac01 nim.duckdb % nimble run
  Press [Ctrl]-[C] twice to stop.
 
   - 00:18:08.955918 <== uptime du serveur (tel que renvoyé par "FROM whoami()") 
-
+```
 
 The default settings (used when the `duquack.txt` file is unmodified or missing) are as follows:
 - Resource provided: an empty in-memory database (`:memory:`).
@@ -43,6 +44,7 @@ The builds include the dynamic libraries and the DuckDB console interface (versi
 
 Once the server is running, you can use the DuckDB console—either one you have installed yourself or one of the provided options—to access the duquack server.
 
+```
 jihem@sonaliwan-lin01 nim.duckdb % **duckdb**
 DuckDB v1.5.5 (Variegata)
 Enter ".help" for usage hints.
@@ -66,6 +68,7 @@ memory D **select * from server.query("from whoami()");**
 │         │          │          │         │                │                               │ }                                │
 └─────────┴──────────┴──────────┴─────────┴────────────────┴───────────────────────────────┴──────────────────────────────────┘
 memory D
+```
 
 Commands in **bold** can also be integrated into a Nim program to create a client and operate in client/server mode. DuckDB can be used by the application independently of any server. See the *tests* folder for examples.
 
@@ -78,6 +81,8 @@ secret
 If the file `ququack.txt` is missing from the folder, copy it from the `src` folder or create it, then restart the server: stop it by pressing `[Ctrl]-[C]` twice, then run `nimble run` again.
 
 The following steps should be performed in a new DuckDB session (use `.exit` to leave the previous one):
+
+```
 memory D **create secret(type quack, token 'secret');** 
 ┌─────────┐
 │ Success │
@@ -96,6 +101,7 @@ memory D **select * from server.demo;**
 │ Paul    │    35 │
 └─────────┴───────┘
 memory D
+```
 
 You can then stop the server again. A new file appears in its directory: **sona.duckdb**.
 This is the database file, containing the table created along with the added row.

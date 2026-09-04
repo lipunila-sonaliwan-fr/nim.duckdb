@@ -21,6 +21,7 @@ Après chargement du package (via `nimble install duquack`), il est possible de.
 
 Le résultat, à l'écran se présente de la façon suivante :
 
+```
 jihem@sonaliwan-mac01 nim.duckdb % nimble run
       Info: using /opt/homebrew/Cellar/nim/2.2.10/nim/bin/nim for compilation
    Building duquack/duquack using c backend
@@ -33,6 +34,7 @@ jihem@sonaliwan-mac01 nim.duckdb % nimble run
  Press [Ctrl]-[C] twice to stop.
 
   - 00:18:08.955918 <== uptime du serveur (tel que renvoyé par "FROM whoami()") 
+```
 
 Les réglages par défaut (fichier duquack.txt non modifié ou absent) sont indiqués ci-dessous.
 - Ressource mise à disposition : base vierge en mémoire (**:memory:**)
@@ -42,6 +44,7 @@ Les dossier xxxOS comportent les bibliothèques dynamiques et l'interface consol
 
 Une fois le serveur activé, vous pouvez utiliser la console DuckDB, installée par vos soins ou l'une de celles proposées pour accéder au serveur duquack.
 
+```
 jihem@sonaliwan-lin01 nim.duckdb % **duckdb**
 DuckDB v1.5.5 (Variegata)
 Enter ".help" for usage hints.
@@ -65,6 +68,7 @@ memory D **select * from server.query("from whoami()");**
 │         │          │          │         │                │                               │ }                                │
 └─────────┴──────────┴──────────┴─────────┴────────────────┴───────────────────────────────┴──────────────────────────────────┘
 memory D
+```
 
 Les commandes en **gras** peuvent également être intégrées à un programme Nim pour réaliser un client et oeuvrer en mode Client / Serveur. DuckDB peut être utilisé indépendemment de tout serveur par vos applications. Voir le dossier *tests* pour quelques exemples.
 
@@ -77,6 +81,8 @@ secret
 Si le fichier ququack.txt est absent du dossier, copier le à partir du dossier src ou créer le, puis relancer le serveur : arrêter le en pressant 2 fois sur \[CTrl\]-\[C\], puis entrer à nouveau `nimble run`.
 
 La suite est à effectuer dans une nouvelle session DuckDB (`.exit` permet de quitter la précédente): 
+
+```
 memory D **create secret(type quack, token 'secret');** 
 ┌─────────┐
 │ Success │
@@ -95,6 +101,7 @@ memory D **select * from server.demo;**
 │ Paul    │    35 │
 └─────────┴───────┘
 memory D
+```
 
 Il alors possible d'arrêter une nouvelle fois le serveur. Un nouveau fichier est présent dans le répertoire : **sona.duckdb**.
 Il s'agit de la base de données, contenant la table créée avec la ligne ajoutée. 
