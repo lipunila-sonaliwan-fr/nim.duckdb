@@ -56,7 +56,7 @@ memory D **create secret(type quack, token 'secret');**
 ├─────────┤
 │ true    │
 └─────────┘
-memory D **attach 'quack:<adresse IP du serveur ou 127.0.0.1 si utilisé en local>:9494' as server (disable_ssl true);**
+memory D **attach 'quack:<server IP address or 127.0.0.1 if used locally>:9494' as server (disable_ssl true);**
 memory D **select * from server.query("from whoami()");**
 ┌─────────┬──────────┬──────────┬─────────┬────────────────┬───────────────────────────────┬──────────────────────────────────┐
 │  name   │ provider │ hostname │ region  │     uptime     │            ts_now             │               meta               │
@@ -90,7 +90,7 @@ memory D **create secret(type quack, token 'secret');**
 ├─────────┤
 │ true    │
 └─────────┘
-memory D **attach 'quack:1adresse IP du serveur ou 127.0.0.1 si utilisé en local:9494'** as server (disable_ssl true);
+memory D **attach '<quack:server IP address or 127.0.0.1 if used locally:9494>' as server (disable_ssl true);**
 memory D **create table server.demo (nom varchar, age int);**
 memory D **insert into server.demo values ('Paul', 35);**
 memory D **select * from server.demo;**
